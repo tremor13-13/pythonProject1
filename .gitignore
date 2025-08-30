@@ -1,0 +1,33 @@
+# Настройки IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Файлы кэша Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Виртуальные окружения
+venv/
+env/
+ENV/
+
+# Установленные пакеты
+pip-selfcheck.json
+
+# Логи и базы данных
+*.log
+*.sqlite3
+*.db
+
+# Файлы операционных систем
+.DS_Store
+Thumbs.db
+
+# Файлы сборки и дистрибуции
+build/
+dist/
+*.egg-info/
