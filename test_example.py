@@ -40,6 +40,7 @@ class TestPages:
         assert self.driver.current_url == "https://www.saucedemo.com/inventory.html", "ошибка входа"
 
     @pytest.mark.profile
+    @allure.attach
     @allure.title("Open cart page")
     @allure.severity(Severity.BLOCKER)
     @allure.link(url="https://confluence.com/profile", name="documentation")
@@ -47,7 +48,13 @@ class TestPages:
         self.login()
         # self.driver.find_element("xpath", "//button[@id='add-to-cart-sauce-labs-bike-light']").click()
         # self.driver.find_element("xpath", "//button[@id='add-to-cart-sauce-labs-backpack']").click()
+
         self.driver.find_element("xpath", "//a[@class='shopping_cart_link']").click()
+        allure.attach(
+            self.driver.get_screenshot_as_png(),
+            name="cart_page_screenshot",
+            attachment_type=allure.attachment_type.PNG
+        )
         time.sleep(3)
         print("ТЕСТ3 ПРОШЕЛ УДАЧНО")
         assert self.driver.current_url == "https://www.saucedemo.com/cart.html", "ошибка входа"
